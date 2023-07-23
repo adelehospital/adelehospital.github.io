@@ -1,0 +1,43 @@
+local_backend: true
+
+locale: 'fr'
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'src/cms/blog'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - label: 'Tags'
+        name: 'tags'
+        widget: 'list'
+        default: []
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'podcast'
+    label: 'Podcast'
+    folder: 'src/cms/podcast'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'podcast' }
+      - { label: 'Publish Date', name: 'date', widget: 'date' }
+      - { label: 'Link', name: 'link', widget: 'string' }
+  - name: 'pages'
+    label: 'Pages'
+    folder: 'src/cms/pages'
+    create: true
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'page' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
