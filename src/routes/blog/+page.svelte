@@ -50,3 +50,13 @@
 		</article>
 	</a>
 {/each}
+
+{#if !filteredPostsList.length}
+	<article class="no-article">Aucuns articles pour le moment</article>
+{/if}
+
+<style>
+	.no-article {
+		text-align: center;
+	}
+</style>

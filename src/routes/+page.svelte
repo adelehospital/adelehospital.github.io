@@ -12,7 +12,7 @@
 <section in:fade>
 	<img
 		src="/images/adele.webp"
-		alt="Adèle Hospital portant un chapeau de paille et un haut blanc, assise face à un champ de blé avec un forêt en arrière plan, le tout sous un beau ciel bleu."
+		alt="Adèle Hospital portant un chapeau de paille et un haut blanc, assise face à un champ de blé avec une forêt en arrière plan, le tout sous un beau ciel bleu."
 	/>
 
 	<svelte:component this={data.content} />
@@ -21,7 +21,7 @@
 <style>
 	img {
 		height: 40vh;
-		padding-bottom: 1rem;
+		margin-bottom: 1rem;
 		border-radius: 8px;
 	}
 
