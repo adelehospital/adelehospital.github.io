@@ -5,7 +5,7 @@ export const prerender = true;
 async function getPosts() {
 	let posts = [];
 
-	const paths = import.meta.glob('/src/cms/blog/*.md', { eager: true });
+	const paths = import.meta.glob('/src/cms/articles/*.md', { eager: true });
 
 	for (const path in paths) {
 		const file = paths[path];

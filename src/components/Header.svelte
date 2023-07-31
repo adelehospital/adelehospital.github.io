@@ -7,7 +7,7 @@
 		</ul>
 		<ul>
 			<li><a href="/cv" class="contrast">🎓 CV</a></li>
-			<li><a href="/blog" class="contrast">🗞️ Blog</a></li>
+			<li><a href="/articles" class="contrast">🗞️ Articles</a></li>
 			<li><a href="/podcast" class="contrast">🎙️ Podcast</a></li>
 		</ul>
 	</nav>
@@ -16,5 +16,9 @@
 <style>
 	header {
 		padding: 0.5rem;
+	}
+
+	.contrast {
+		text-align: center;
 	}
 </style>

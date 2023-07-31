@@ -24,14 +24,14 @@
 <br />
 
 {#each filteredPostsList as { slug, title, date, tags }, i}
-	<a href="/blog/{slug}">
+	<a href="/articles/{slug}">
 		<article in:fade={{ delay: i * 50 }}>
 			<hgroup>
 				<h3>{title}</h3>
 				<p>{formatDate(date)}</p>
 			</hgroup>
 			{#each tags as tag}
-				<a href="/blog/tags/{tag}"><kbd>#{tag}</kbd></a>
+				<a href="/articles/tags/{tag}"><kbd>#{tag}</kbd></a>
 			{/each}
 		</article>
 	</a>

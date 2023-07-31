@@ -10,13 +10,13 @@ media_folder: static/images/uploads
 public_folder: /images/uploads
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'src/cms/blog'
+  - name: 'articles'
+    label: 'Articles'
+    folder: 'src/cms/articles'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog' }
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'article' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - label: 'Tags'

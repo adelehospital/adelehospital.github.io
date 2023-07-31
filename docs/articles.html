@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width" />
 		
 		<link href="./_app/immutable/assets/0.9415fd47.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/2.02f79cf3.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/3.8a957cc3.css" rel="stylesheet">
 		<link rel="modulepreload" href="./_app/immutable/entry/start.15f00cac.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.1733a390.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.60bb2d27.js">
@@ -14,9 +14,10 @@
 		<link rel="modulepreload" href="./_app/immutable/entry/app.bb907fde.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.41c905a7.js">
 		<link rel="modulepreload" href="./_app/immutable/nodes/0.7a0fd1a9.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.29b5a0a6.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/3.3c12a53d.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.93323930.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.96cf5f47.js"><title>Adèle Hospital</title><!-- HEAD_svelte-xrfbhd_START --><meta name="description" content="homepage"><!-- HEAD_svelte-xrfbhd_END -->
+		<link rel="modulepreload" href="./_app/immutable/chunks/utils.65a8c901.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.96cf5f47.js"><title>Articles</title><!-- HEAD_svelte-1i6mbfj_START --><meta name="description" content="Articles"><!-- HEAD_svelte-1i6mbfj_END -->
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">
@@ -30,21 +31,20 @@
 
 		<main class="container">
 
-<section class="svelte-eukwgi"><img src="/images/adele.webp" alt="Adèle Hospital portant un chapeau de paille et un haut blanc, assise face à un champ de blé avec une forêt en arrière plan, le tout sous un beau ciel bleu." class="svelte-eukwgi">
+<div></div>
 
-	<h3>Journaliste presse écrite et radio localisée à Paris</h3>
-<p>Mes sujets de prédilection sont l’agriculture, la gestion des déchets, la biodiversité et la santé environnementale.</p>
-<p>J’écris pour le web et le print et je réalise des reportages radio.</p>
 <br>
-<kbd>Environnement</kbd>
-<kbd>Agriculture</kbd>
-<kbd>Santé</kbd>
-<kbd>Médias</kbd>
-<kbd>Presse écrite</kbd>
-<kbd>Radio</kbd>
-<kbd>Investigation</kbd>
-<kbd>Charte journalisme écologie</kbd>
-</section></main>
+
+<div><input type="search" placeholder="Rechercher des articles" aria-label="Rechercher des articles" value=""></div>
+
+<br>
+
+<a href="/articles/2023-07-24-article-de-test"><article><hgroup><h3>Article de test</h3>
+				<p>25 juil. 2023</p></hgroup>
+			<a href="/articles/tags/test"><kbd>#test</kbd></a><a href="/articles/tags/lorem"><kbd>#lorem</kbd></a></article>
+	</a>
+
+</main>
 
 		<footer class="container"><hr>
 
@@ -58,7 +58,7 @@
 <br></body></div>
 
 
-			
+			<script type="application/json" data-sveltekit-fetched data-url="/api/posts">{"status":200,"statusText":"","headers":{},"body":"[{\"layout\":\"article\",\"title\":\"Article de test\",\"date\":\"2023-07-24T23:33:35.150Z\",\"tags\":[\"test\",\"lorem\"],\"slug\":\"2023-07-24-article-de-test\"}]"}</script>
 			<script>
 				{
 					__sveltekit_nwnyvu = {
@@ -75,7 +75,7 @@
 						import("./_app/immutable/entry/app.bb907fde.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
-							node_ids: [0, 2],
+							node_ids: [0, 3],
 							data,
 							form: null,
 							error: null

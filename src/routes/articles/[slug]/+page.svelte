@@ -12,7 +12,7 @@
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<a href="/blog">
+<a href="/articles">
 	<section in:fade>
 		<small>← Revenir à la liste d'articles</small>
 	</section>
@@ -27,7 +27,7 @@
 
 <div in:fade={{ delay: 100 }}>
 	{#each data.meta.tags as tag}
-		<a href="/blog/tags/{tag}"><kbd>#{tag}</kbd></a>
+		<a href="/articles/tags/{tag}"><kbd>#{tag}</kbd></a>
 	{/each}
 </div>
 

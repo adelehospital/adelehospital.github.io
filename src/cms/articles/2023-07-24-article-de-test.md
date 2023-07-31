@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: article
 title: Article de test
 date: 2023-07-24T23:33:35.150Z
 tags:

@@ -16,8 +16,8 @@
 </script>
 
 <svelte:head>
-	<title>Blog</title>
-	<meta name="description" content="Blog" />
+	<title>Articles</title>
+	<meta name="description" content="Articles" />
 </svelte:head>
 
 <div in:fade>
@@ -38,14 +38,14 @@
 <br />
 
 {#each filteredPostsList as post, i (post.slug)}
-	<a href="/blog/{post.slug}" in:fade={{ delay: 50 + i * 50 }} animate:flip={{ duration: 200 }}>
+	<a href="/articles/{post.slug}" in:fade={{ delay: 50 + i * 50 }} animate:flip={{ duration: 200 }}>
 		<article>
 			<hgroup>
 				<h3>{post.title}</h3>
 				<p>{formatDate(post.date)}</p>
 			</hgroup>
 			{#each post.tags as tag}
-				<a href="/blog/tags/{tag}"><kbd>#{tag}</kbd></a>
+				<a href="/articles/tags/{tag}"><kbd>#{tag}</kbd></a>
 			{/each}
 		</article>
 	</a>
