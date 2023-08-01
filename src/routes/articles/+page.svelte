@@ -52,7 +52,7 @@
 {/each}
 
 {#if !filteredPostsList.length}
-	<article class="no-article">Aucuns articles pour le moment</article>
+	<article class="no-article">Aucun article ne correspond à ces termes de recherche</article>
 {/if}
 
 <style>
