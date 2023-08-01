@@ -37,8 +37,17 @@
 	<svelte:component this={data.content} />
 </div>
 
+{#if data.meta.pdf_file !== undefined}
+	<object data={data.meta.pdf_file} type="application/pdf" title={data.meta.title} />
+{/if}
+
 <style>
 	section {
 		margin-bottom: 0;
+	}
+
+	object {
+		min-height: 100vh;
+		width: 100%;
 	}
 </style>

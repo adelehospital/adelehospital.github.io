@@ -6,8 +6,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: static/images/uploads
-public_folder: /images/uploads
+media_folder: static/uploads
+public_folder: /uploads
 
 collections:
   - name: 'articles'
@@ -19,11 +19,15 @@ collections:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'article' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - label: 'Tags'
-        name: 'tags'
-        widget: 'list'
-        default: []
+      - { label: 'Tags', name: 'tags', widget: 'list', default: [] }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      - {
+          label: 'PDF File',
+          name: 'pdf_file',
+          widget: 'file',
+          required: false,
+          media_library: { config: { multiple: true } }
+        }
   - name: 'podcast'
     label: 'Podcast'
     folder: 'src/cms/podcast'
