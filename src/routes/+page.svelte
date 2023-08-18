@@ -6,7 +6,11 @@
 
 <svelte:head>
 	<title>Adèle Hospital</title>
-	<meta name="description" content="Journaliste presse écrite et radio localisée à Paris. Mes sujets de prédilection sont l’agriculture, la gestion des déchets, la biodiversité et la santé environnementale." />
+	<meta
+		name="description"
+		content="Journaliste presse écrite et radio localisée à Paris. Mes sujets de prédilection sont l’agriculture, la gestion des déchets, la biodiversité et la santé environnementale."
+	/>
+	<meta name="google-site-verification" content="m0ciCeG7udGEV0cWdWeNVtTfyFz10tSuSzUzCGcMMOE" />
 </svelte:head>
 
 <section in:fade>
