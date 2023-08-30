@@ -5,4 +5,4 @@ title: podcast
 
 # Les chroniques du ficus
 
-Les chroniques du ficus analysent l'actualité de l'environnement avec un peu de méthode scientifique et très peu de sérieux.
+Sur mon temps libre, je réalise un podcast court qui parle de l'actualité en matière d'environnement, avec un ton décalé.
