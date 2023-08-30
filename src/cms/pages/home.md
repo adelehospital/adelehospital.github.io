@@ -2,12 +2,13 @@
 layout: page
 title: home
 ---
-
 ### Journaliste presse écrite et radio localisée à Paris
 
-Mes sujets de prédilection sont l'agriculture, la gestion des déchets, la biodiversité et la santé environnementale.
+Mes sujets de prédilection sont l’agriculture, la gestion des déchets, la biodiversité, le numérique et la santé environnementale.
 
-J'écris pour le web et le print et je réalise des reportages radio.
+Je suis formée à l'investigation.
+
+J’écris pour le web et le print et je réalise des reportages et des podcasts radio.
 
 <br />
 
