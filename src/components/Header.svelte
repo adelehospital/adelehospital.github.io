@@ -7,7 +7,7 @@
 		</ul>
 		<ul>
 			<li><a href="/cv" class="contrast">🎓 CV</a></li>
-			<li><a href="/articles" class="contrast">🗞️ Articles</a></li>
+			<!-- <li><a href="/articles" class="contrast">🗞️ Articles</a></li> -->
 			<li><a href="/podcast" class="contrast">🎙️ Podcast</a></li>
 		</ul>
 	</nav>
