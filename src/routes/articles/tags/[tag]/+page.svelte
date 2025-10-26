@@ -1,16 +1,17 @@
 <script>
-	import { formatDate } from '$lib/utils';
-
 	import { fade } from 'svelte/transition';
+	import ArticleList from '$lib/components/ArticleList.svelte';
 
-	export let data;
+	let { data } = $props();
 
-	$: filteredPostsList = data.posts.filter(
-		(post) =>
-			post.title.toLowerCase().indexOf(data.params.tag.toLowerCase()) !== -1 ||
-			post.tags.some(
-				(element) => element.toLowerCase().indexOf(data.params.tag.toLowerCase()) !== -1
-			)
+	let filteredPostsList = $derived(
+		data.posts.filter(
+			(post) =>
+				post.title.toLowerCase().indexOf(data.params.tag.toLowerCase()) !== -1 ||
+				post.tags.some(
+					(element) => element.toLowerCase().indexOf(data.params.tag.toLowerCase()) !== -1
+				)
+		)
 	);
 </script>
 
@@ -19,20 +20,14 @@
 	<meta name="description" content={data.params.tag} />
 </svelte:head>
 
+<a href="/articles">
+	<section in:fade>
+		<small>← Revenir à la liste d'articles</small>
+	</section>
+</a>
+
 <h1 in:fade><kbd>#{data.params.tag}</kbd></h1>
 
 <br />
 
-{#each filteredPostsList as { slug, title, date, tags }, i}
-	<a href="/articles/{slug}">
-		<article in:fade={{ delay: i * 50 }}>
-			<hgroup>
-				<h3>{title}</h3>
-				<p>{formatDate(date)}</p>
-			</hgroup>
-			{#each tags as tag}
-				<a href="/articles/tags/{tag}"><kbd>#{tag}</kbd></a>
-			{/each}
-		</article>
-	</a>
-{/each}
+<ArticleList articles={filteredPostsList} />

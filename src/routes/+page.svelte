@@ -1,7 +1,7 @@
 <script>
 	import { fade } from 'svelte/transition';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <svelte:head>
@@ -19,7 +19,7 @@
 		alt="Adèle Hospital portant un chapeau de paille et un haut blanc, assise face à un champ de blé avec une forêt en arrière plan, le tout sous un beau ciel bleu."
 	/>
 
-	<svelte:component this={data.content} />
+	<data.content />
 </section>
 
 <style>

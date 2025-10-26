@@ -1,11 +1,11 @@
-import remarkUnwrapImages from 'remark-unwrap-images';
+import rehypeUnwrapImages from 'rehype-unwrap-images';
 
 const config = {
 	extensions: ['.svx', '.md'],
 	smartypants: {
 		dashes: 'oldschool'
 	},
-	remarkPlugins: [remarkUnwrapImages]
+	rehypePlugins: [rehypeUnwrapImages]
 };
 
 export default config;

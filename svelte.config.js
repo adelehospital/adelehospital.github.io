@@ -9,7 +9,11 @@ const config = {
 		adapter: adapter({
 			pages: 'docs',
 			assets: 'docs'
-		})
+		}),
+		prerender: {
+			// TODO: remove that
+			handleUnseenRoutes: 'ignore'
+		}
 	}
 };
 

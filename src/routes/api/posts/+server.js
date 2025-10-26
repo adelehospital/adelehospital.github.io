@@ -3,6 +3,18 @@ import { json } from '@sveltejs/kit';
 export const prerender = true;
 
 async function getPosts() {
+	let mediaObj = {};
+
+	const media = import.meta.glob('/src/cms/media/*.md', { eager: true });
+
+	for (const path in media) {
+		const file = media[path];
+
+		if (file && typeof file === 'object' && 'metadata' in file) {
+			mediaObj[file.metadata.name] = { ...file.metadata };
+		}
+	}
+
 	let posts = [];
 
 	const paths = import.meta.glob('/src/cms/articles/*.md', { eager: true });
@@ -12,9 +24,14 @@ async function getPosts() {
 		const slug = path.split('/').at(-1)?.replace('.md', '');
 
 		if (file && typeof file === 'object' && 'metadata' in file && slug) {
-			const metadata = file.metadata;
-			const post = { ...metadata, slug };
-			posts.push(post);
+			let metadata;
+
+			if (typeof file.metadata.media !== 'undefined') {
+				metadata = { ...file.metadata, media: mediaObj[file.metadata.media] };
+			} else {
+				metadata = file.metadata;
+			}
+			posts.push({ ...metadata, slug });
 		}
 	}
 

@@ -3,7 +3,7 @@
 
 	import { fade } from 'svelte/transition';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <svelte:head>
@@ -26,6 +26,11 @@
 </hgroup>
 
 <div in:fade={{ delay: 100 }}>
+	{#if data.meta.media}
+		<a href="/articles/media/{data.meta.media}">
+			<kbd class="media-kbd">@ {data.meta.media}</kbd>
+		</a>
+	{/if}
 	{#each data.meta.tags as tag}
 		<a href="/articles/tags/{tag}"><kbd>#{tag}</kbd></a>
 	{/each}
@@ -34,11 +39,15 @@
 <br />
 
 <div in:fade={{ delay: 150 }}>
-	<svelte:component this={data.content} />
+	<data.content />
 </div>
 
+{#if data.meta.thumbnail !== undefined}
+	<img src={data.meta.thumbnail} alt={data.meta.title} />
+{/if}
+
 {#if data.meta.pdf_file !== undefined}
-	<object data={data.meta.pdf_file} type="application/pdf" title={data.meta.title} />
+	<object data={data.meta.pdf_file} type="application/pdf" title={data.meta.title}></object>
 {/if}
 
 <style>
@@ -49,5 +58,9 @@
 	object {
 		min-height: 100vh;
 		width: 100%;
+	}
+
+	.media-kbd {
+		background-color: var(--pico-primary-background);
 	}
 </style>

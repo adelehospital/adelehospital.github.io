@@ -10,6 +10,22 @@ media_folder: static/uploads
 public_folder: /uploads
 
 collections:
+  - name: 'media'
+    label: 'Media'
+    folder: 'src/cms/media'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'media' }
+      - { label: 'Name', name: 'name', widget: 'string' }
+      - {
+          label: 'Logo',
+          name: 'thumbnail',
+          widget: 'image',
+          choose_url: true,
+          media_library: { config: { multiple: true } },
+          required: false
+        }
   - name: 'articles'
     label: 'Articles'
     folder: 'src/cms/articles'
@@ -19,8 +35,33 @@ collections:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'article' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Tags', name: 'tags', widget: 'list', default: [] }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - {
+           label: 'Media',
+          name: 'media',
+          widget: 'relation',
+          collection: 'media',
+          value_field: 'name',
+          search_fields: ['name'],
+          display_fields: ['name'],
+          required: false
+        }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          default: [],
+          required: false,
+          field: { label: Tag, name: tag, widget: string }
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+      - {
+          label: 'Image',
+          name: 'thumbnail',
+          widget: 'image',
+          choose_url: true,
+          required: false,
+          media_library: { config: { multiple: true } }
+        }
       - {
           label: 'PDF File',
           name: 'pdf_file',
@@ -35,7 +76,7 @@ collections:
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'podcast' }
-      - { label: 'Publish Date', name: 'date', widget: 'date' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Link', name: 'link', widget: 'string' }
   - name: 'pages'
     label: 'Pages'

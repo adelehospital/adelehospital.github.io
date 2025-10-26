@@ -3,7 +3,7 @@
 
 	import { fade } from 'svelte/transition';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <svelte:head>
@@ -12,7 +12,7 @@
 </svelte:head>
 
 <div in:fade>
-	<svelte:component this={data.content} />
+	<data.content />
 </div>
 
 <br />
@@ -29,6 +29,6 @@
 			allowfullscreen=""
 			allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
 			loading="lazy"
-		/>
+		></iframe>
 	</section>
 {/each}

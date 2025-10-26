@@ -7,23 +7,22 @@
 		"preview": "vite preview",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"cms": "npx netlify-cms-proxy-server"
+		"cms": "pnpx decap-server"
 	},
 	"devDependencies": {
-		"@picocss/pico": "2.0.3",
-		"@sveltejs/adapter-static": "^2.0.3",
-		"@sveltejs/kit": "^1.30.4",
-		"eslint": "^8.56.0",
-		"eslint-config-prettier": "^8.10.0",
-		"eslint-plugin-svelte": "^2.35.1",
-		"mdsvex": "^0.10.6",
-		"prettier": "^2.8.8",
-		"prettier-plugin-svelte": "^2.10.1",
-		"svelte": "^3.59.2",
-		"vite": "^4.5.2"
+		"@picocss/pico": "2.1.1",
+		"@sveltejs/adapter-static": "^3.0.10",
+		"@sveltejs/kit": "^2.47.3",
+		"eslint": "^9.38.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-svelte": "^3.12.5",
+		"mdsvex": "^0.12.6",
+		"prettier": "^3.6.2",
+		"prettier-plugin-svelte": "^3.4.0",
+		"rehype-unwrap-images": "^1.0.0",
+		"sass-embedded": "^1.93.2",
+		"svelte": "^5.42.1",
+		"vite": "^7.1.12"
 	},
-	"type": "module",
-	"dependencies": {
-		"remark-unwrap-images": "^3.0.1"
-	}
+	"type": "module"
 }

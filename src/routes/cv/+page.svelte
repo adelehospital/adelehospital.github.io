@@ -1,7 +1,7 @@
 <script>
 	import { fade } from 'svelte/transition';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <svelte:head>
@@ -10,5 +10,5 @@
 </svelte:head>
 
 <section in:fade>
-	<svelte:component this={data.content} />
+	<data.content />
 </section>

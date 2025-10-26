@@ -1,18 +1,18 @@
 <script>
 	import '@picocss/pico';
-	import './styles.css';
-	import Header from '../components/Header.svelte';
-	import Footer from '../components/Footer.svelte';
+	import './styles.scss';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+
+	let { children } = $props();
 </script>
 
 <div class="app">
-	<body>
-		<Header />
+	<Header />
 
-		<main class="container">
-			<slot />
-		</main>
+	<main class="container">
+		{@render children?.()}
+	</main>
 
-		<Footer />
-	</body>
+	<Footer />
 </div>

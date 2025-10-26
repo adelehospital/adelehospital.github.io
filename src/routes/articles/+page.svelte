@@ -1,17 +1,21 @@
 <script>
-	import { formatDate } from '$lib/utils';
-
 	import { fade } from 'svelte/transition';
-	import { flip } from 'svelte/animate';
+	import ArticleList from '$lib/components/ArticleList.svelte';
 
-	export let data;
+	let { data } = $props();
 
-	let searchTerm = '';
+	let searchTerm = $state('');
 
-	$: filteredPostsList = data.posts.filter(
-		(post) =>
-			post.title.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ||
-			post.tags.some((element) => element.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1)
+	let filteredPostsList = $derived(
+		data.posts.filter(
+			(post) =>
+				post.title.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ||
+				post.tags.some(
+					(element) => element.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+				) ||
+				(typeof post.media.name !== 'undefined' &&
+					post.media.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1)
+		)
 	);
 </script>
 
@@ -21,7 +25,7 @@
 </svelte:head>
 
 <div in:fade>
-	<svelte:component this={data.content} />
+	<data.content />
 </div>
 
 <br />
@@ -37,26 +41,11 @@
 
 <br />
 
-{#each filteredPostsList as post, i (post.slug)}
-	<a href="/articles/{post.slug}" in:fade={{ delay: 50 + i * 50 }} animate:flip={{ duration: 200 }}>
-		<article>
-			<hgroup>
-				<h3>{post.title}</h3>
-				<p>{formatDate(post.date)}</p>
-			</hgroup>
-			{#each post.tags as tag}
-				<a href="/articles/tags/{tag}"><kbd>#{tag}</kbd></a>
-			{/each}
-		</article>
-	</a>
-{/each}
-
-{#if !filteredPostsList.length}
-	<article class="no-article">Aucun article ne correspond à ces termes de recherche</article>
-{/if}
+<ArticleList articles={filteredPostsList} />
 
 <style>
 	.no-article {
 		text-align: center;
+		padding: 1rem;
 	}
 </style>
