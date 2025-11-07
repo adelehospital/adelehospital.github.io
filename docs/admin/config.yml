@@ -3,8 +3,8 @@ local_backend: true
 locale: 'fr'
 
 backend:
-  name: git-gateway
-  branch: main
+  name: proxy
+  proxy_url: 'http://localhost:8082/api/v1' 
 
 media_folder: static/uploads
 public_folder: /uploads
