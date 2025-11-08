@@ -4,7 +4,7 @@ locale: 'fr'
 
 backend:
   name: proxy
-  proxy_url: 'http://localhost:8082/api/v1' 
+  proxy_url: 'http://localhost:8082/api/v1'
 
 media_folder: static/uploads
 public_folder: /uploads
@@ -69,15 +69,6 @@ collections:
           required: false,
           media_library: { config: { multiple: true } }
         }
-  - name: 'podcast'
-    label: 'Podcast'
-    folder: 'src/cms/podcast'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'podcast' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Link', name: 'link', widget: 'string' }
   - name: 'pages'
     label: 'Pages'
     folder: 'src/cms/pages'

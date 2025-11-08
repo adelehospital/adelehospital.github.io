@@ -1,0 +1,1 @@
+import{H as e}from"./BU6blcmH.js";import{B as i}from"./-TS2BfOP.js";import{D as m}from"./BFoP8Iqu.js";function t(r,o){throw(!i||m)&&(isNaN(r)||r<400||r>599)?new Error(`HTTP error status codes must be between 400 and 599 — ${r} is invalid`):new e(r,o)}export{t as e};
