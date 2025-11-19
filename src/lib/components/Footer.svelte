@@ -2,7 +2,7 @@
 	<hr />
 
 	<hgroup>
-		<h5>Contact</h5>
+		<h3>Contact</h3>
 		<a class="muted" href="mailto:adele.hospital@proton.me"><span>adele.hospital@proton.me</span></a
 		>
 

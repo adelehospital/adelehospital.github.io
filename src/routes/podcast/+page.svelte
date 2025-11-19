@@ -46,9 +46,10 @@
 	{#each items as item}
 		<section in:fade={{ delay: i * 50 }}>
 			<article>
-				<h3>{@html item.title}</h3>
-
-				<br />
+				<hgroup>
+					<h3>{@html item.title}</h3>
+					<p>{formatDate(Date.parse(item.date))}</p>
+				</hgroup>
 
 				<audio controls src={item.enclosureUrl}></audio>
 
@@ -58,10 +59,6 @@
 						{@html item.description.replace(/(<|&lt;)br\s*\/*(>|&gt;)/g, ' ')}
 					</p>
 				</details>
-
-				<footer>
-					{formatDate(Date.parse(item.date))}
-				</footer>
 			</article>
 		</section>
 	{/each}
