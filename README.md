@@ -6,7 +6,7 @@
 
 ## Develop
 
-### Start dev server
+### Start dev server
 
 Open a terminal, move to the `adelehospital.github.io` repository, and run the command:
 
@@ -50,7 +50,7 @@ pnpm preview --open
 
 It will open the website in a new broser tab. You can then test if it behaves the way you want it to. Users will see exactly that website when published.
 
-### Push to Github
+### Push to Github
 
 If you are happy with the end result, you can now send your code to Github.
 
@@ -63,7 +63,7 @@ git add --all
 #### Create a commit
 
 ```bash
-git commit -m "<describe what your commit does (i.e. the changes you made in the code)>"
+git commit -m "describe what your commit does (i.e. the changes you made in the code)"
 ```
 
 #### Push your code to Github
